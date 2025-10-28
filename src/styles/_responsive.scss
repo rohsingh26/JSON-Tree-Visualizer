@@ -1,0 +1,19 @@
+@media (max-width: 768px) {
+  .app-main {
+    flex-direction: column;
+  }
+
+  .input-section {
+    flex: none;
+    width: 100%;
+  }
+
+  .preview-section {
+    flex: none;
+    width: 100%;
+  }
+
+  textarea {
+    height: 200px;
+  }
+}
