@@ -3,6 +3,7 @@
 This is a React-based web application that allows users to visualize JSON data in a tree structure.
 It provides features like search by JSON path, light/dark mode toggle, and an interactive draggable view.
 
+Deployed link: https://json-tree-visualizer-ten.vercel.app/
 
 ## Features
 
@@ -26,7 +27,7 @@ git clone https://github.com/rohsingh26/JSON-Tree-Visualizer.git
 ### 2. Go to the project directory
 
 ```bash
-cd json-tree-visualizer
+cd JSON-Tree-Visualizer
 ```
 
 ### 3. Install dependencies
