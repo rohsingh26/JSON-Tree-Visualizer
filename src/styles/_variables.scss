@@ -1,13 +1,15 @@
 :root {
-  --bg: #f8f9fa;
-  --text: #222;
-  --card-bg: #fff;
-  --border: #ccc;
+  --bg: #f8fafc;
+  --text: #0f172a;
+  --card-bg: #ffffff;
+  --border: #e6e9ef;
+  --bg-secondary: #ffffff;
 }
 
-.dark {
-  --bg: #1c1c1c;
-  --text: #e8e8e8;
-  --card-bg: #2a2a2a;
-  --border: #444;
+.app.dark {
+  --bg: #0b1220;
+  --text: #e6eef8;
+  --card-bg: #0f1724;
+  --border: #1f2937;
+  --bg-secondary: #0b1220;
 }

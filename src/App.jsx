@@ -20,7 +20,7 @@ const App = () => {
       setParsedData(parsed);
       setError("");
     } catch (err) {
-      setError("❌ Invalid JSON. Please check your input.");
+      setError("Invalid JSON. Please check your input.");
       setParsedData(null);
     }
   };
@@ -28,7 +28,7 @@ const App = () => {
   return (
     <div className={`app ${theme}`}>
       <header className="app-header">
-        <h1>JSON Tree Visualizer</h1>
+        <h1 style={{ color: "gray" }}>JSON Tree Visualizer</h1>
         <Toggle theme={theme} toggleTheme={toggleTheme} />
       </header>
 

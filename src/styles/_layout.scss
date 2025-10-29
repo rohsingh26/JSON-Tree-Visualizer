@@ -36,15 +36,53 @@
   flex: 1;
 }
 
-.input-section {
-  flex: 0.4;
-}
+.input-section { flex: 0.4; }
+
+.input-section-box {width: 92%;}
 
 .preview-section {
   flex: 0.6;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
+  width: 60%;
+  padding: 1.5rem;
+
+  h2 {
+    margin: 0 0 0.75rem 0;
+    font-size: 1.15rem;
+  }
+
+  .search-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .status {
+    min-width: 140px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .flow-container {
+    width: 100%;
+    height: 60vh;
+    border-radius: 10px;
+    background-color: var(--bg-secondary);
+    box-shadow: 0 6px 18px rgba(2,6,23,0.06);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .preview-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+    align-items: center;
+  }
 }
 
 textarea {
@@ -59,25 +97,7 @@ textarea {
   resize: none;
 }
 
-.theme-toggle {
-  cursor: pointer;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  border: none;
-  background-color: var(--border);
-  color: var(--text);
-  transition: background 0.3s;
-}
-
-.download-btn {
-  margin-top: 1rem;
-  padding: 0.6rem 1rem;
-  border: none;
-  border-radius: 8px;
-  background: #007bff;
-  color: #fff;
-  cursor: pointer;
-}
+.theme-toggle { cursor: pointer; padding: 0.5rem 1rem; border-radius: 20px; border: none; background-color: var(--border); color: var(--text); transition: background 0.3s; }
 
 .generate-btn {
   margin-top: 1rem;
@@ -90,49 +110,55 @@ textarea {
   cursor: pointer;
   width: 100%;
   transition: background 0.3s;
-
-  &:hover {
-    background: #218838;
-  }
+  &:hover { background: #218838; }
 }
 
-.error-msg {
-  color: #e74c3c;
-  margin-top: 0.5rem;
-  font-size: 0.9rem;
-}
+.error-msg { color: #e74c3c; margin-top: 0.5rem; font-size: 0.9rem; }
 
-.preview-section {
-  width: 60%;
-  padding: 1.5rem;
+.tree-capture { cursor: grab; height: 100%; width: 100%; }
+.tree-capture:active { cursor: grabbing; }
+.flow-container .react-flow { width: 100%; height: 100%; }
+
+.flow-container .zoom-controls {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
   display: flex;
   flex-direction: column;
+  gap: 8px;
+  z-index: 999;
+  background: rgba(255,255,255,0.92);
+  padding: 6px;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(2,6,23,0.12);
+  transition: background 0.2s, transform 0.12s;
+}
+
+.flow-container .zoom-controls button {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  border: none;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  background: transparent;
+  transition: background 0.12s, transform 0.12s;
+}
+.flow-container .zoom-controls button:hover { background: rgba(0,0,0,0.04); transform: translateY(-2px); }
 
-  h2 {
-    margin-bottom: 1rem;
-  }
+.react-flow__node.highlighted {
+  border: 3px solid #ff3b3b !important;
+  box-shadow: 0 10px 24px rgba(255,59,59,0.16) !important;
+  transform: scale(1.02);
+}
 
-  .flow-container {
-    width: 100%;
-    height: 60vh;
-    border-radius: 10px;
-    background-color: var(--bg-secondary);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  }
-
-  .download-btn {
-    margin-top: 1rem;
-    padding: 0.6rem 1.2rem;
-    border: none;
-    border-radius: 6px;
-    background: #6c63ff;
-    color: white;
-    cursor: pointer;
-    transition: background 0.3s ease;
-
-    &:hover {
-      background: #5848d0;
-    }
-  }
+@media (max-width: 900px) {
+  .app-main { padding: 1rem; }
+  .preview-section { width: 100%; padding: 1rem; }
+  textarea { height: 40vh; }
+  .flow-container { height: 50vh; }
+  .flow-container .zoom-controls { left: 8px; bottom: 8px; }
 }
